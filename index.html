@@ -271,35 +271,50 @@ const sentinelImages = {
                     </div>
 
                     <div className="alert">
-                        <h3>🚨 EMERGENCIA - 120K afectados (UNGRD) | 13 barrios Montería inundados | Datos oficiales</h3>
-                        <p>Cifras ajustadas a datos UNGRD 9-feb-2026 | 24 municipios | Comparación temporal Sentinel-1</p>
+                        <h3>🚨 EMERGENCIA - 170013 Damnificados | 24 municipios | 13 barrios Montería inundados | </h3>
+                        <p>Cifras ajustadas a Informe situacional de emergencia 10-feb-2026  </p>
                     </div>
 
                     <div className="stats-grid">
                         <div className="stat-card red">
                             <div className="stat-label">Municipios</div>
                             <div className="stat-value">24</div>
-                            <div className="stat-sub">monitoreados</div>
+                            <div className="stat-sub">Afectados</div>
                         </div>
                         <div className="stat-card yellow">
-                            <div className="stat-label">Personas</div>
-                            <div className="stat-value">{(affectedPop/1000).toFixed(0)}K</div>
-                            <div className="stat-sub">{showProjection ? 'proyectadas' : 'afectadas'}</div>
+                            <div className="stat-label">Barrios</div>
+                            <div className="stat-value">331</div>
+                            <div className="stat-sub">Afectados</div>
+                        </div>
+                        <div className="stat-card yellow">
+                            <div className="stat-label">Corregimientos</div>
+                            <div className="stat-value">146</div>
+                            <div className="stat-sub">Afectados</div>
+                        </div>
+                        <div className="stat-card yellow">
+                            <div className="stat-label">Veredas</div>
+                            <div className="stat-value">396</div>
+                            <div className="stat-sub">Afectadas</div>
+                        </div>
+                        <div className="stat-card yellow">
+                            <div className="stat-label">Resguardos Indígenas</div>
+                            <div className="stat-value">12</div>
+                            <div className="stat-sub">Afectados</div>
                         </div>
                         <div className="stat-card green">
-                            <div className="stat-label">Ayuda</div>
-                            <div className="stat-value">223</div>
-                            <div className="stat-sub">toneladas</div>
+                            <div className="stat-label">Alojamientos temporales</div>
+                            <div className="stat-value">51</div>
+                            <div className="stat-sub">Activados</div>
                         </div>
                         <div className="stat-card orange">
-                            <div className="stat-label">Bovinos</div>
-                            <div className="stat-value">{(affectedCattle/1000).toFixed(0)}K</div>
-                            <div className="stat-sub">riesgo</div>
+                            <div className="stat-label">Bovinos y bufalino</div>
+                            <div className="stat-value">14845</div>
+                            <div className="stat-sub">Movilizado</div>
                         </div>
                         <div className="stat-card cyan">
-                            <div className="stat-label">Inversión</div>
-                            <div className="stat-value">3.6B</div>
-                            <div className="stat-sub">COP</div>
+                            <div className="stat-label">Animales de compañía</div>
+                            <div className="stat-value">2244</div>
+                            <div className="stat-sub">Evacuados</div>
                         </div>
 
                     </div>
@@ -509,14 +524,18 @@ const sentinelImages = {
 
                     {activeTab === 'infrastructure' && (
                         <div className="panel">
-                            <h2>Infraestructura Crítica + Ayuda Humanitaria</h2>
+                            <h2>Infraestructura Afectada + Ayuda Humanitaria</h2>
                             {[
-                                {type: 'Hospitales y Centros de Salud', count: 18, risk: 'high'},
-                                {type: 'Instituciones Educativas', count: 124, risk: 'high'},
-                                {type: 'Acueductos Municipales', count: 14, risk: 'high'},
-                                {type: 'Albergues Temporales Activos', count: 28, risk: 'medium'},
+                                {type: 'Hospitales y Centros de Salud', count: 28, risk: 'high'},
+                                {type: 'Instituciones Educativas', count: 143, risk: 'high'},
+                                {type: 'Centros Comunitarios', count: 2807, risk: 'high'},
+                                {type: 'Acueducto Urbano', count: 13, risk: 'high'},
+                                {type: 'Acueductos Rurales', count: 32, risk: 'high'},
+                                {type: 'Vías departamentales afectadas', count: 11, risk: 'high'},
+                                {type: 'Vías rurales afectadas', count: 90, risk: 'high'},
+                                {type: 'Hectáreas de cultivos afectados', count: 30225, risk: 'high'},
                                 {type: 'Ayuda Humanitaria (toneladas)', count: 223, risk: 'low'},
-                                {type: 'Kits Alimentarios Despachados', count: 13000, risk: 'low'},
+                                {type: 'KAyudas Alimentarias y no alimentarias Despachadas', count: 408612, risk: 'low'},
                             ].map((item, i) => (
                                 <div key={i} style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', 
                                     padding: '10px', background: '#374151', borderRadius: '6px', marginBottom: '8px'}}>
@@ -616,7 +635,7 @@ const sentinelImages = {
 
                     <div className="footer">
                         UNGRD • Gobernación Córdoba • CVS • IDEAM • Copernicus Sentinel-1 SAR<br/>
-                        Última actualización: 9-Feb-2026 | 
+                        Última actualización: 10-Feb-2026 | 
                         Elaboración: Doris Helena Serrano Amaya - Departamento de Geografía y Medio Ambiente - 
                         Universidad de Córdoba - Colombia
                         </div>
