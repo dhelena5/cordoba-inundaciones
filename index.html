@@ -205,9 +205,17 @@ const sentinelImages = {
 
             useEffect(() => {
                 if (activeTab === 'map' && !map) {
-                    const newMap = L.map('map').setView([8.5, -75.8], 9);
-                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(newMap);
-                    setMap(newMap);
+                    // Pequeño delay para asegurar que el contenedor está visible
+                    setTimeout(() => {
+                        const newMap = L.map('map').setView([8.5, -75.8], 9);
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '© OpenStreetMap'
+                        }).addTo(newMap);
+                        setMap(newMap);
+                    }, 100);
+                } else if (activeTab === 'map' && map) {
+                    // Corregir tamaño del mapa cuando se vuelve a la pestaña
+                    setTimeout(() => map.invalidateSize(), 100);
                 }
             }, [activeTab]);
 
